@@ -75,3 +75,17 @@ app.use((err, req, res, next) => {
 app.listen(3001, () => {
   console.log(`Server ready at http://localhost:3001`);
 });
+
+//Serve static assets in production
+if (process.env.NODE_ENV === 'production') {
+  //set static folder
+  app.use(express.static('frontend/build'));
+
+  app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'));
+  });
+}
+
+const PORT = process.env.PORT || 2001;
+
+app.listen(PORT, () => console.log(`Server started on port ${PORT}`));

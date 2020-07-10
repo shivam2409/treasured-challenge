@@ -14,7 +14,7 @@ function CommentsWrapper({ comments, createComment }) {
           <Comment
             key={comment.id}
             comment={comment}
-            createReply={createReply}
+            createComment={createComment}
           />
         ))}
     </section>

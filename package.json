@@ -10,9 +10,13 @@
     "frontend:start": "yarn workspace frontend start",
     "backend:start": "yarn workspace backend start",
     "backend:setup": "yarn workspace backend setup",
-    "backend:clean": "yarn workspace backend clean"
+    "backend:clean": "yarn workspace backend clean",
+    "heroku-postbuild": "cd client && npm install --only=dev && yarn install && yarn run build"
   },
   "devDependencies": {
     "concurrently": "^5.1.0"
+  },
+  "dependencies": {
+    "yarn": "^1.22.4"
   }
 }

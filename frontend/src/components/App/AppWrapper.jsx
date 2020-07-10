@@ -13,7 +13,7 @@ function AppWrapper() {
         <h1>Comments</h1>
       </header>
       <CreateCommentContainer createComment={createComment} />
-      <CommentsWrapper comments={comments} />
+      <CommentsWrapper comments={comments} createComment={createComment} />
     </div>
   );
 }
